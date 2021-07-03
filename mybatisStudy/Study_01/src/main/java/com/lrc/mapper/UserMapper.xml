@@ -4,7 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lrc.mapper.UserMapper">
   <select id="getUserList" resultType="com.lrc.pojo.User">
-    select *
-    from mybatis.user
+    select * from mybatis.user
   </select>
 </mapper>
