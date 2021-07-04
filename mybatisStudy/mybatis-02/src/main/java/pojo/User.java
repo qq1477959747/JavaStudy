@@ -1,4 +1,4 @@
-package com.lrc.pojo;
+package pojo;
 
 /**
  * @author luo

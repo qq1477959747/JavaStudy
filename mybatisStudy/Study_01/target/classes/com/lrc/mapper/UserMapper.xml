@@ -3,7 +3,28 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lrc.mapper.UserMapper">
+  <update id="updateUser" parameterType="com.lrc.pojo.User">
+    update user
+    set name     = #{user.name},
+        password = #{user.password}
+    where id = #{id};
+  </update>
+  <delete id="deleteById" parameterType="int">
+    delete
+    from user
+    where id = #{id}
+  </delete>
   <select id="getUserList" resultType="com.lrc.pojo.User">
-    select * from mybatis.user
+    select *
+    from mybatis.user
   </select>
+  <select id="getUserById" resultType="com.lrc.pojo.User" parameterType="int">
+    select *
+    from user
+    where id = #{id}
+  </select>
+
+  <insert id="addUser" parameterType="com.lrc.pojo.User" useGeneratedKeys="true">
+    insert into user (name, password) value (#{user.name},#{user.password})
+  </insert>
 </mapper>
